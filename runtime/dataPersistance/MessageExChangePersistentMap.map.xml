@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map xmlns="http://cayenne.apache.org/schema/3.0/modelMap"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://cayenne.apache.org/schema/3.0/modelMap http://cayenne.apache.org/schema/3.0/modelMap.xsd"
+  project-version="3.0.0.1">
+	<property name="defaultPackage" value="com.viewfunction.messageEngine.exchange.persistent"/>
+	<db-entity name="ActivityTaskNotificationInfo">
+		<db-attribute name="activityId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="activityName" type="VARCHAR" isMandatory="true" length="500"/>
+		<db-attribute name="infoId" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="100"/>
+		<db-attribute name="notificationId" type="VARCHAR" isMandatory="true" length="50"/>
+		<db-attribute name="taskDescription" type="LONGVARCHAR"/>
+		<db-attribute name="taskDueDate" type="TIMESTAMP"/>
+		<db-attribute name="taskDueStatus" type="VARCHAR" length="100"/>
+		<db-attribute name="taskName" type="VARCHAR" isMandatory="true" length="500"/>
+		<db-attribute name="taskRole" type="VARCHAR" length="200"/>
+	</db-entity>
+	<db-entity name="ExternalResourceNotificationInfo">
+		<db-attribute name="infoId" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="100"/>
+		<db-attribute name="notificationId" type="VARCHAR" isMandatory="true" length="50"/>
+		<db-attribute name="resourceName" type="VARCHAR" isMandatory="true" length="1000"/>
+		<db-attribute name="resourceURL" type="VARCHAR" isMandatory="true" length="1000"/>
+	</db-entity>
+	<db-entity name="Message">
+		<db-attribute name="groupId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="messageContent" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="messageId" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="50"/>
+		<db-attribute name="messageReadStatus" type="BOOLEAN" isMandatory="true"/>
+		<db-attribute name="messageReceiverId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="messageReceiversId" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="messageReceiversName" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="messageReceiversType" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="messageScope" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="messageSenderId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="messageSenderName" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="messageSentDate" type="TIMESTAMP" isMandatory="true"/>
+		<db-attribute name="messageTitle" type="LONGVARCHAR" isMandatory="true"/>
+	</db-entity>
+	<db-entity name="Notification">
+		<db-attribute name="groupId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="notificationContent" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="notificationHandleable" type="BOOLEAN" isMandatory="true"/>
+		<db-attribute name="notificationId" type="VARCHAR" isPrimaryKey="true" isMandatory="true" length="50"/>
+		<db-attribute name="notificationReadStatus" type="BOOLEAN" isMandatory="true"/>
+		<db-attribute name="notificationReceiverId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="notificationReceiversId" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="notificationReceiversName" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="notificationReceiversType" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="notificationScope" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="notificationSenderId" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="notificationSenderName" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="notificationSentDate" type="TIMESTAMP" isMandatory="true"/>
+		<db-attribute name="notificationStatus" type="VARCHAR" isMandatory="true" length="100"/>
+		<db-attribute name="notificationTitle" type="LONGVARCHAR" isMandatory="true"/>
+		<db-attribute name="notificationType" type="VARCHAR" isMandatory="true" length="100"/>
+	</db-entity>
+	<obj-entity name="ActivityTaskNotificationInfo" className="com.viewfunction.messageEngine.exchange.persistent.ActivityTaskNotificationInfo" dbEntityName="ActivityTaskNotificationInfo">
+		<obj-attribute name="activityId" type="java.lang.String" db-attribute-path="activityId"/>
+		<obj-attribute name="activityName" type="java.lang.String" db-attribute-path="activityName"/>
+		<obj-attribute name="notificationId" type="java.lang.String" db-attribute-path="notificationId"/>
+		<obj-attribute name="taskDescription" type="java.lang.String" db-attribute-path="taskDescription"/>
+		<obj-attribute name="taskDueDate" type="java.util.Date" db-attribute-path="taskDueDate"/>
+		<obj-attribute name="taskDueStatus" type="java.lang.String" db-attribute-path="taskDueStatus"/>
+		<obj-attribute name="taskName" type="java.lang.String" db-attribute-path="taskName"/>
+		<obj-attribute name="taskRole" type="java.lang.String" db-attribute-path="taskRole"/>
+	</obj-entity>
+	<obj-entity name="ExternalResourceNotificationInfo" className="com.viewfunction.messageEngine.exchange.persistent.ExternalResourceNotificationInfo" dbEntityName="ExternalResourceNotificationInfo">
+		<obj-attribute name="notificationId" type="java.lang.String" db-attribute-path="notificationId"/>
+		<obj-attribute name="resourceName" type="java.lang.String" db-attribute-path="resourceName"/>
+		<obj-attribute name="resourceURL" type="java.lang.String" db-attribute-path="resourceURL"/>
+	</obj-entity>
+	<obj-entity name="Message" className="com.viewfunction.messageEngine.exchange.persistent.Message" dbEntityName="Message">
+		<obj-attribute name="groupId" type="java.lang.String" db-attribute-path="groupId"/>
+		<obj-attribute name="messageContent" type="java.lang.String" db-attribute-path="messageContent"/>
+		<obj-attribute name="messageReadStatus" type="java.lang.Boolean" db-attribute-path="messageReadStatus"/>
+		<obj-attribute name="messageReceiverId" type="java.lang.String" db-attribute-path="messageReceiverId"/>
+		<obj-attribute name="messageReceiversId" type="java.lang.String" db-attribute-path="messageReceiversId"/>
+		<obj-attribute name="messageReceiversName" type="java.lang.String" db-attribute-path="messageReceiversName"/>
+		<obj-attribute name="messageReceiversType" type="java.lang.String" db-attribute-path="messageReceiversType"/>
+		<obj-attribute name="messageScope" type="java.lang.String" db-attribute-path="messageScope"/>
+		<obj-attribute name="messageSenderId" type="java.lang.String" db-attribute-path="messageSenderId"/>
+		<obj-attribute name="messageSenderName" type="java.lang.String" db-attribute-path="messageSenderName"/>
+		<obj-attribute name="messageSentDate" type="java.util.Date" db-attribute-path="messageSentDate"/>
+		<obj-attribute name="messageTitle" type="java.lang.String" db-attribute-path="messageTitle"/>
+	</obj-entity>
+	<obj-entity name="Notification" className="com.viewfunction.messageEngine.exchange.persistent.Notification" dbEntityName="Notification">
+		<obj-attribute name="groupId" type="java.lang.String" db-attribute-path="groupId"/>
+		<obj-attribute name="notificationContent" type="java.lang.String" db-attribute-path="notificationContent"/>
+		<obj-attribute name="notificationHandleable" type="java.lang.Boolean" db-attribute-path="notificationHandleable"/>
+		<obj-attribute name="notificationReadStatus" type="java.lang.Boolean" db-attribute-path="notificationReadStatus"/>
+		<obj-attribute name="notificationReceiverId" type="java.lang.String" db-attribute-path="notificationReceiverId"/>
+		<obj-attribute name="notificationReceiversId" type="java.lang.String" db-attribute-path="notificationReceiversId"/>
+		<obj-attribute name="notificationReceiversName" type="java.lang.String" db-attribute-path="notificationReceiversName"/>
+		<obj-attribute name="notificationReceiversType" type="java.lang.String" db-attribute-path="notificationReceiversType"/>
+		<obj-attribute name="notificationScope" type="java.lang.String" db-attribute-path="notificationScope"/>
+		<obj-attribute name="notificationSenderId" type="java.lang.String" db-attribute-path="notificationSenderId"/>
+		<obj-attribute name="notificationSenderName" type="java.lang.String" db-attribute-path="notificationSenderName"/>
+		<obj-attribute name="notificationSentDate" type="java.util.Date" db-attribute-path="notificationSentDate"/>
+		<obj-attribute name="notificationStatus" type="java.lang.String" db-attribute-path="notificationStatus"/>
+		<obj-attribute name="notificationTitle" type="java.lang.String" db-attribute-path="notificationTitle"/>
+		<obj-attribute name="notificationType" type="java.lang.String" db-attribute-path="notificationType"/>
+	</obj-entity>
+	<db-relationship name="TO_Notification" source="ActivityTaskNotificationInfo" target="Notification" toMany="false">
+		<db-attribute-pair source="notificationId" target="notificationId"/>
+	</db-relationship>
+	<db-relationship name="TO_Notification" source="ExternalResourceNotificationInfo" target="Notification" toMany="false">
+		<db-attribute-pair source="notificationId" target="notificationId"/>
+	</db-relationship>
+	<db-relationship name="TO_ActivityTaskNotificationInfo" source="Notification" target="ActivityTaskNotificationInfo" toMany="false">
+		<db-attribute-pair source="notificationId" target="notificationId"/>
+	</db-relationship>
+	<db-relationship name="TO_ExternalResourceNotificationInfo" source="Notification" target="ExternalResourceNotificationInfo" toMany="false">
+		<db-attribute-pair source="notificationId" target="notificationId"/>
+	</db-relationship>
+	<obj-relationship name="toActivityTaskNotificationInfo" source="Notification" target="ActivityTaskNotificationInfo" deleteRule="Cascade" db-relationship-path="TO_ActivityTaskNotificationInfo"/>
+	<obj-relationship name="toExternalResourceNotificationInfo" source="Notification" target="ExternalResourceNotificationInfo" deleteRule="Cascade" db-relationship-path="TO_ExternalResourceNotificationInfo"/>
+</data-map>
