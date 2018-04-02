@@ -30,7 +30,7 @@ public class ServiceResourceInitializer implements ServletContextListener{
 	private RealTimeNotificationReceiver groupMessageReceiver;
 	private RealTimeNotificationReceiver globalMessageReceiver;
 	private List<RealTimeNotificationReceiver> addOnMessageExchangePortReceiverList;
-	private static String cayenneDataBaseProjectFile= RuntimeEnvironmentHandler.getApplicationRootPath()+"/dataPersistance/cayenne.xml";
+	private static String cayenneDataBaseProjectFile= RuntimeEnvironmentHandler.getApplicationRootPath()+"dataPersistance/cayenne.xml";
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {

@@ -198,5 +198,6 @@
     <orderEntry type="library" name="Maven: org.apache.velocity:velocity:1.6.3" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.4" level="project" />
     <orderEntry type="library" name="Maven: oro:oro:2.0.8" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.45" level="project" />
   </component>
 </module>
